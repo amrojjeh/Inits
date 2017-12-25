@@ -21,4 +21,4 @@ echo del *.exe >> clean.bat
 
 REM -------- DIRECTORIES & EXTRA FILES --------
 mkdir Code\
-echo > main.cpp
+echo > Code\main.cpp
