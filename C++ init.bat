@@ -1,3 +1,5 @@
+REM Uses the Visual Studio Compiler
+
 @echo off
 
 REM -------- BUILD.BAT --------
