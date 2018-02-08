@@ -1,14 +1,14 @@
-REM Uses the Visual Studio Compiler
+REM Uses VS Compiler
 
 @echo off
 
 REM -------- BUILD.BAT --------
-echo @echo off > built.bat
-echo pushd Code\ >> built.bat
-echo if not defined DevEnvDir (call vcvarsall x64) >> built.bat
-echo cl main.cpp /Zi >> built.bat
-echo move main.exe ..\ >> built.bat
-echo popd >> built.bat
+echo @echo off > build.bat
+echo pushd Code\ >> build.bat
+echo if not defined DevEnvDir (call vcvarsall x64) >> build.bat
+echo cl main.cpp /Zi >> build.bat
+echo move main.exe ..\ >> build.bat
+echo popd >> build.bat
 
 REM -------- CLEAN.BAT --------
 echo @echo off > clean.bat
