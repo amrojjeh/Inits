@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+import sys
 
 window = Tk()
 window.title("C++ Project Initializer")
@@ -50,7 +51,8 @@ def Create(event):
 	with open(srcPath + "\\main.cpp", "w") as main:
 		main.write(
 """#include <iostream>
-int main(void)
+
+int main(int argc, char* argv[])
 {
 	std::cout << "Hello World!" << std::endl;
 	return 0;
@@ -77,11 +79,16 @@ Log.grid(row=0, column=0, sticky=N+S+E+W, columnspan=2)
 # Ask for name of the project
 Label(text="Name ").grid(row=1, column=0, sticky=W)
 Name = Entry()
+if len(sys.argv) >= 2:
+	Name.insert(0, sys.argv[1])
 Name.grid(row=1, column=1, sticky=W, padx=10, pady=5)
 
 # Ask for path
 Label(text="Full path* ").grid(row=2, column=0, sticky=W)
 Path = Entry()
+if len(sys.argv) >= 2:
+	Path.insert(0, sys.argv[2])
+
 Path.grid(row=2, column=1, sticky=W, padx=10, pady=5)
 
 # Ask for dependencies
