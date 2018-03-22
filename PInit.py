@@ -86,7 +86,7 @@ Name.grid(row=1, column=1, sticky=W, padx=10, pady=5)
 # Ask for path
 Label(text="Full path* ").grid(row=2, column=0, sticky=W)
 Path = Entry()
-if len(sys.argv) >= 2:
+if len(sys.argv) >= 3:
 	Path.insert(0, sys.argv[2])
 
 Path.grid(row=2, column=1, sticky=W, padx=10, pady=5)
