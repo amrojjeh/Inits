@@ -59,7 +59,7 @@ def BuildFile(projectPath):
 	build = "@echo off\n"
 	build += "if not defined DevEnvDir (call vcvarsall {})\n".format(ArchitectureSelected.get())
 	build += "pushd build\\\n"
-	build += "cl ..\\src\\*.cpp /I ..\\Dependencies /D {} /link {}\npopd".format(Macros.get(), Dependencies.get())
+	build += "cl ..\\src\\*.cpp /I ..\\dependencies /D {} /link ..\dependencies\\{}\npopd".format(Macros.get(), Dependencies.get())
 	with open(projectPath + "\\build.bat", "w") as buildfile:
 		buildfile.write(build)
 
@@ -129,7 +129,7 @@ def TemplateChange(event):
 	if (event == "SDL2"):
 		Macros.delete(0, END)
 		Dependencies.delete(0, END)
-		Dependencies.insert(0, "SDL2.lib")
+		Dependencies.insert(0, "SDL\SDL2.lib")
 		Macros.insert(0, "SDL_MAIN_HANDLED")
 
 CurrentRow = 0
